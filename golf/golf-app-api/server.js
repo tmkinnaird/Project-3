@@ -4,6 +4,7 @@
 require('dotenv').config()
 const express = require('express');
 const Golf = require('./models/golfSchema.js');
+const golfsController = require('./controllers/golfs.js')
 const app = express();
 const cors = require('cors');
 // const methodOverride  = require('method-overide');
@@ -32,10 +33,11 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // open the connection to mongo
 db.on('open' , ()=>{});
 
+
 //___________________
 //Middleware
 //___________________
-
+app.use('/golfs', golfsController);
 //use public folder for static assets
 app.use(express.static('public'));
 
