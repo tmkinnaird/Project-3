@@ -35,7 +35,7 @@ export default (props) => {
     return (
         <form onSubmit={createGolf}>
          <label>GOLF COURSE: <input type="text" name="title" ref={nameInput} /><br/></label> 
-         <label>URL: <input type="text" name="url" ref={urlInput} /><br/></label> 
+         <label>URL WEBSITE: <input type="text" name="url" ref={urlInput} /><br/></label> 
          <label>SCORE: <input type="number" name="score" ref={scoreInput} /><br/></label>
          <label>LOCATION: <input type="text" name="location" ref={locationInput}/></label>
             <input type="submit" value="Create Bucket-List"/> 

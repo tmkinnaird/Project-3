@@ -5,10 +5,35 @@ body {
 h1 {
   color: yellow;
   font-size: 50px;;
+  font-family: monospace;
+  border: 10px;
+  border-style: double;
 }
 
 h2 {
+  color: sandybrown;
+  font-family: monospace;
+  font-size: 28px;
+  margin: 15px;
+  padding: 20px;
+}
+
+form {
+  color: white;
+  text-align: center;
+  border-style: inset;
+  border-color: yellow;
+  border-radius: 25px;
+  border-width: 4px;
+}
+input {
+  display: block;
+  margin-left: 500px;
+}
+
+h3 {
   color: yellow;
+  flex-direction: fixed;
 }
 
 .App {

@@ -8,9 +8,9 @@ import Completed from './played';
 function App() {
     const [golfs, setGolfs] = useState([]);
     const [name, setName] = useState('');
-    // const [form, toggleForm] = useState(false);
+    const [form, toggleForm] = useState(false);
     const [completedList, updateCompleted] = useState([]);
-    const [completed, setCompleted] = useState(false);
+    // const [completed, setCompleted] = useState(false);
   
      // Read
      const fetchGolfs = async () => {
@@ -76,7 +76,7 @@ function App() {
       const currentGolfs = golfs[index];
       console.log(currentGolfs);
       currentGolfs.completed = true;
-        
+      toggleForm(true);
       updateCompleted([...completedList, currentGolfs]);
 }
     
@@ -88,6 +88,7 @@ const removeFromCompleted = (index) => {
     
     useEffect(() => {
       fetchGolfs()
+      toggleForm()
       console.log('use effect')
      }, []);
     
@@ -95,9 +96,10 @@ const removeFromCompleted = (index) => {
     return (
       <div className="App">
       <header>
-       <h1>Love Golf, Remember Golf</h1>
-       <h2>Scrapbook your golfing adventures</h2>
-       <Golfs updateGolfs={setGolfs} golfs={golfs} addToCompleted={addToCompleted}/>
+       <h1>Love Golf. Remember Golf.</h1>
+       <h2>Scrapbook your golfing adventures. <br/>
+       Remember your friends, <br/> good times,<br/> and the courses you've played!</h2>
+        <Golfs updateGolfs={setGolfs} golfs={golfs} addToCompleted={addToCompleted}/> 
        {/* <Golfs golfs={golfs} */}
        {/* addToCompleted={addToCompleted}/> */}
        <ul>
@@ -116,7 +118,12 @@ const removeFromCompleted = (index) => {
                    deleteGolf(golf._id)
                  }
                }>DELETE {golf.name}</button>
-                  <UpdateGolf 
+               <button onClick={
+                 (event) => {
+                   
+                 }
+               }>Update Golf Course</button>
+                 <UpdateGolf 
                   updateGolf={setGolfs} 
                   golfs={golfs}
                   id={golf._id}
@@ -140,6 +147,7 @@ const removeFromCompleted = (index) => {
          }
        </ul>
        <Completed completedItems={completedList} removeFromCompleted={removeFromCompleted} />
+       <h3>@TM TooGood</h3>
        </header>
       </div>
      
