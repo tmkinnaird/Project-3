@@ -11,7 +11,9 @@ function App() {
     const [form, toggleForm] = useState(false);
     const [completedList, updateCompleted] = useState([]);
     // const [completed, setCompleted] = useState(false);
-  
+    const handleToggle = () => {
+      toggleForm(!form)
+    }
      // Read
      const fetchGolfs = async () => {
       try{
@@ -97,8 +99,8 @@ const removeFromCompleted = (index) => {
       <div className="App">
       <header>
        <h1>Love Golf. Remember Golf.</h1>
-       <h2>Scrapbook your golfing adventures. <br/>
-       Remember your friends, <br/> good times,<br/> and the courses you've played!</h2>
+       <h2>Scrapbook your golfing adventures.
+       Remember your friends and the good times!</h2>
         <Golfs updateGolfs={setGolfs} golfs={golfs} addToCompleted={addToCompleted}/> 
        {/* <Golfs golfs={golfs} */}
        {/* addToCompleted={addToCompleted}/> */}
@@ -118,11 +120,12 @@ const removeFromCompleted = (index) => {
                    deleteGolf(golf._id)
                  }
                }>DELETE {golf.name}</button>
-               <button onClick={
+               {/* <button onClick={
                  (event) => {
                    
                  }
-               }>Update Golf Course</button>
+               }>Update Golf Stuff</button> */}
+               { form ?
                  <UpdateGolf 
                   updateGolf={setGolfs} 
                   golfs={golfs}
@@ -131,12 +134,17 @@ const removeFromCompleted = (index) => {
                   url={golf.url}
                   score={golf.score}
                   location={golf.location}
-                   />
+                  date={golf.date}
+                   /> : <button onClick={
+                     (event) => {
+                       handleToggle()
+                     }
+                   }>EDIT INFO</button>}
                    <button onClick={
                      (event) => {
                        addToCompleted(index)
                      }
-                   }>Played Courses</button>
+                   }>Move To Played Courses</button>
                </li>
               )
              }else {

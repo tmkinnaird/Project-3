@@ -5,6 +5,7 @@ export default (props) => {
     const urlInput = useRef(null);
     const scoreInput = useRef(null);
     const locationInput = useRef(null);
+    const dateInput = useRef(null);
     
 
     const updateGolf = async (event) => {
@@ -13,8 +14,9 @@ export default (props) => {
         const name = nameInput.current.value;
         const score = scoreInput.current.value;
         const location = locationInput.current.value;
-        const body = JSON.stringify({name, url});
-        console.log(body);
+        const date = dateInput.current.value;
+        const body = JSON.stringify({name, url, score, location, date});
+        // console.log(body);
        
         try {
             const response = await fetch(`http://localhost:3000/golfs/${props.id}`, {
@@ -39,7 +41,8 @@ export default (props) => {
          <label> UPDATE NAME: <input type="text" name="name" ref={nameInput} /><br/></label> 
          <label> UPDATE URL: <input type="text" name="url" ref={urlInput} /><br/></label> 
          <label> UPDATE SCORE: <input type="number" name="score" ref={scoreInput} /><br/></label>
-         <label> UPDATE LOCATION: <input type="text" name="location" ref={locationInput} /></label>
+         <label> UPDATE LOCATION: <input type="text" name="location" ref={locationInput} /><br/></label>
+         <label> UPDATE DATE PLAYED: <input type="date" name="location" ref={dateInput} /></label>
             <input type="submit" value="Update Golf Course"/> 
         </form>
     )

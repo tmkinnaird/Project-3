@@ -1,10 +1,12 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+// import { use } from '../../golf-app-api/controllers/golfs';
 
 export default (props) => {
     const nameInput = useRef(null);
     const urlInput = useRef(null);
     const locationInput = useRef(null);
     const scoreInput = useRef(null);
+    const dateInput = useRef(null);
 
     const createGolf = async (event) => {
         event.preventDefault()
@@ -12,8 +14,9 @@ export default (props) => {
         const name = nameInput.current.value;
         const score = scoreInput.current.value;
         const location = locationInput.current.value;
+        const date = dateInput.current.value;
         const completed = false;
-        const body = JSON.stringify({name, url, score, location, completed});
+        const body = JSON.stringify({name, url, score, location, completed, date});
         event.currentTarget.reset();
         try {
             const response = await fetch('http://localhost:3000/golfs', {
@@ -37,7 +40,8 @@ export default (props) => {
          <label>GOLF COURSE: <input type="text" name="title" ref={nameInput} /><br/></label> 
          <label>URL WEBSITE: <input type="text" name="url" ref={urlInput} /><br/></label> 
          <label>SCORE: <input type="number" name="score" ref={scoreInput} /><br/></label>
-         <label>LOCATION: <input type="text" name="location" ref={locationInput}/></label>
+         <label>LOCATION: <input type="text" name="location" ref={locationInput}/><br/></label>
+         <label>DATE PLAYED: <input type="date" name="date" ref={dateInput}/></label>
             <input type="submit" value="Create Bucket-List"/> 
         </form>
     )
