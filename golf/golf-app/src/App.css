@@ -2,6 +2,7 @@ body {
   background-color: rgb(15, 68, 15);
   background-image: url(https://www.golfchannel.com/sites/default/files/2020/03/19/golf_swing_stock_1920.jpg);
   background-size: cover;
+  
 }
 
 h1 {
@@ -15,12 +16,16 @@ h1 {
 h2 {
   color: crimson;
   font-family: monospace;
-  font-size: 28px;
-  margin: 60px;
+  font-size: 20px;
+  margin: 80px;
+}
+h4 {
+  color: crimson;
 }
 
 form {
-  color: lawngreen;
+  color: black;
+  font-size: 20px;
   text-align: center;
   border-style: inset;
   border-color: darkgreen;
@@ -29,13 +34,15 @@ form {
   padding: 12px;
 }
 input {
-  display: block;
+  
   margin-left: 500px;
 }
 
 h3 {
   color: black;
   flex-direction: fixed;
+  position: relative;
+  top: 350px;
 }
 
 .App {

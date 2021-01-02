@@ -3,6 +3,7 @@ import UpdateGolf from './UpdateGolf';
 import './App.css';
 import Golfs from './Golfs';
 import Completed from './played';
+import Button from 'react-bootstrap/Button';
 // import { set } from 'mongoose';
 
 function App() {
@@ -78,7 +79,7 @@ function App() {
       const currentGolfs = golfs[index];
       console.log(currentGolfs);
       currentGolfs.completed = true;
-      toggleForm(true);
+      // toggleForm(true);
       updateCompleted([...completedList, currentGolfs]);
 }
     
@@ -115,11 +116,11 @@ const removeFromCompleted = (index) => {
                    deleteGolf(golfs._id)
                  } */}
                {/* }>DELETE {golfs.name}</button> */}
-               <button onClick={
+               <Button onClick={
                  (event) => {
                    deleteGolf(golf._id)
                  }
-               }>DELETE {golf.name}</button>
+               }>DELETE {golf.name}</Button>
                {/* <button onClick={
                  (event) => {
                    
@@ -135,16 +136,16 @@ const removeFromCompleted = (index) => {
                   score={golf.score}
                   location={golf.location}
                   date={golf.date}
-                   /> : <button onClick={
+                   /> : <Button onClick={
                      (event) => {
                        handleToggle()
                      }
-                   }>EDIT INFO</button>}
-                   <button onClick={
+                   }>EDIT INFO</Button>}
+                   <Button onClick={
                      (event) => {
                        addToCompleted(index)
                      }
-                   }>Move To Played Courses</button>
+                   }>MOVE TO COMPLETED COURSES</Button>
                </li>
               )
              }else {

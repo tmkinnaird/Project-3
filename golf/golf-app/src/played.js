@@ -1,9 +1,10 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button'
 
 const Completed = (props) => {
     return (
         <div>
-            <h2>Completed Courses</h2>
+            <h4>COMPLETED COURSES</h4>
             <ul>
                 {
                     props.completedItems.map((golfs, index) => {
@@ -12,8 +13,9 @@ const Completed = (props) => {
                               <p>  {golfs.name} </p>
                               <p> {golfs.location} </p>
                               <p> {golfs.score} </p>
+                              <p> {golfs.date} </p>
                                 <a href={golfs.url} > GOLF COURSE WEBSITE </a>
-                                <button onClick={()=> props.removeFromCompleted(index)}>Delete Played Course</button>
+                                <Button onClick={()=> props.removeFromCompleted(index)}>DELETE PLAYED COURSE</Button>
                             </li>
                         }
                         
