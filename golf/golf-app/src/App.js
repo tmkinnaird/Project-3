@@ -1,20 +1,18 @@
 import { useState, useEffect } from 'react';
-import UpdateGolf from './UpdateGolf';
 import './App.css';
 import Golfs from './Golfs';
 import Completed from './played';
 import Button from 'react-bootstrap/Button';
+import IndivCourse from './IndivCourse';
 // import { set } from 'mongoose';
 
 function App() {
     const [golfs, setGolfs] = useState([]);
     const [name, setName] = useState('');
-    const [form, toggleForm] = useState(false);
+    
     const [completedList, updateCompleted] = useState([]);
     // const [completed, setCompleted] = useState(false);
-    const handleToggle = () => {
-      toggleForm(!form)
-    }
+   
      // Read
      const fetchGolfs = async () => {
       try{
@@ -91,7 +89,7 @@ const removeFromCompleted = (index) => {
     
     useEffect(() => {
       fetchGolfs()
-      toggleForm()
+      // toggleForm()
       console.log('use effect')
      }, []);
     
@@ -110,24 +108,7 @@ const removeFromCompleted = (index) => {
            golfs.map((golf, index) => {
              if(golf.completed === false) {
               return (
-               <li key={golf._id}> {golf.name}<br/>
-               {/* <button onClick={
-                 (event) => {
-                   deleteGolf(golfs._id)
-                 } */}
-               {/* }>DELETE {golfs.name}</button> */}
-               <Button onClick={
-                 (event) => {
-                   deleteGolf(golf._id)
-                 }
-               }>DELETE {golf.name}</Button>
-               {/* <button onClick={
-                 (event) => {
-                   
-                 }
-               }>Update Golf Stuff</button> */}
-               { form ?
-                 <UpdateGolf 
+                <IndivCourse 
                   updateGolf={setGolfs} 
                   golfs={golfs}
                   id={golf._id}
@@ -136,17 +117,10 @@ const removeFromCompleted = (index) => {
                   score={golf.score}
                   location={golf.location}
                   date={golf.date}
-                   /> : <Button onClick={
-                     (event) => {
-                       handleToggle()
-                     }
-                   }>EDIT INFO</Button>}
-                   <Button onClick={
-                     (event) => {
-                       addToCompleted(index)
-                     }
-                   }>MOVE TO COMPLETED COURSES</Button>
-               </li>
+                  deleteGolf={deleteGolf}
+                  addToCompleted={addToCompleted}
+                  index={index}
+                />
               )
              }else {
                return
