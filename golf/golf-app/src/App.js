@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Golfs from './Golfs';
 import Completed from './played';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import IndivCourse from './IndivCourse';
 // import { set } from 'mongoose';
 
@@ -97,9 +97,9 @@ const removeFromCompleted = (index) => {
     return (
       <div className="App">
       <header>
-       <h1>Love Golf. Remember Golf.</h1>
+       <h1>Golf Bucket-List</h1>
        <h2>Scrapbook your golfing adventures.
-       Remember your friends and the good times!</h2>
+       Remember your friends and the courses you've played!</h2>
         <Golfs updateGolfs={setGolfs} golfs={golfs} addToCompleted={addToCompleted}/> 
        {/* <Golfs golfs={golfs} */}
        {/* addToCompleted={addToCompleted}/> */}
@@ -130,7 +130,7 @@ const removeFromCompleted = (index) => {
          }
        </ul>
        <Completed completedItems={completedList} removeFromCompleted={removeFromCompleted} />
-       <h3>@TM TooGood</h3>
+       <h3>@TM TooGood Enterprises</h3>
        </header>
       </div>
      

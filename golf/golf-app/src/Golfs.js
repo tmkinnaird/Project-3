@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 // import { use } from '../../golf-app-api/controllers/golfs';
 
 export default (props) => {

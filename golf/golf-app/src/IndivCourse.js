@@ -24,7 +24,7 @@ const IndivCourse = (props) => {
                    
                  }
                }>Update Golf Stuff</button> */}
-               { form ?
+               { form ? <>
                  <UpdateGolf 
                   updateGolf={props.updateGolf} 
                   golfs={props.golfs}
@@ -35,7 +35,15 @@ const IndivCourse = (props) => {
                   location={props.location}
                   date={props.date}
                   deleteGolf={props.deleteGolf}
-                   /> : <Button onClick={
+                  handleToggle={handleToggle}
+                   /> 
+                   <Button onClick={
+                       (event) => {
+                           handleToggle()
+                       }
+                   } >CLOSE EDIT FORM</Button>
+                   </>
+                    : <Button onClick={
                      (event) => {
                        handleToggle()
                      }

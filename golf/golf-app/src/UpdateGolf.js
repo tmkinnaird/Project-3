@@ -29,6 +29,7 @@ export default (props) => {
             const data = await response.json();
             const filteredGolfs = props.golfs.filter(golf => golf._id !== data._id)
             props.updateGolf([...filteredGolfs, data])
+            props.handleToggle()
         } catch (error){
             console.log(error)
         }

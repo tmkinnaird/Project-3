@@ -14,7 +14,7 @@ const Completed = (props) => {
                               <p> {golfs.location} </p>
                               <p> {golfs.score} </p>
                               <p> {golfs.date} </p>
-                                <a href={golfs.url} > GOLF COURSE WEBSITE </a>
+                                <a href={golfs.url} target="_blank" > GOLF COURSE WEBSITE </a>
                                 <Button onClick={()=> props.removeFromCompleted(index)}>DELETE PLAYED COURSE</Button>
                             </li>
                         }
