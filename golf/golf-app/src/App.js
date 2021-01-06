@@ -99,7 +99,7 @@ const removeFromCompleted = (index) => {
       <header>
        <h1>Golf Bucket-List</h1>
        <h2>Scrapbook your golfing adventures.
-       Remember your friends and the courses you've played!</h2>
+       Remember the good times and the courses you've played!</h2>
         <Golfs updateGolfs={setGolfs} golfs={golfs} addToCompleted={addToCompleted}/> 
        {/* <Golfs golfs={golfs} */}
        {/* addToCompleted={addToCompleted}/> */}

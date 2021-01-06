@@ -42,6 +42,9 @@ golfs.put('/:id', async (req, res) => {
 //Create
 
 golfs.post('/', async (req, res) => {
+    let date = req.body.date
+    // date = date.toLocaleDateString("en-US")
+    // console.log(req.body)
     try {
         const createdGolfs = await Golf.create(req.body);
         res.status(200).json(createdGolfs);

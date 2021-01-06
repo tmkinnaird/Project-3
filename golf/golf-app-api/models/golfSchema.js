@@ -6,7 +6,8 @@ const golfsSchema = Schema({
     url: {type:String},
     score: {type:Number},
     location: {type:String},
-    completed: {type:Boolean}
+    completed: {type:Boolean},
+    date: {type:Date}
 })
 
 module.exports = model('Golf', golfsSchema)
