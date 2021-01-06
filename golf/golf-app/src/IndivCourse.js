@@ -8,13 +8,13 @@ const IndivCourse = (props) => {
         toggleForm(!form)
       }
     return (
-        <li key={props.id}> {props.name}<br/>
+        <li key={props.id} className="Courses"> {props.name}<br/>
                {/* <button onClick={
                  (event) => {
                    deleteGolf(golfs._id)
                  } */}
                {/* }>DELETE {golfs.name}</button> */}
-               <Button onClick={
+               <Button  className="btn-dark btn-base" onClick={
                  (event) => {
                    props.deleteGolf(props.id)
                  }
@@ -37,22 +37,22 @@ const IndivCourse = (props) => {
                   deleteGolf={props.deleteGolf}
                   handleToggle={handleToggle}
                    /> 
-                   <Button onClick={
+                   <Button className="btn-dark btn-base" onClick={
                        (event) => {
                            handleToggle()
                        }
                    } >CLOSE EDIT FORM</Button>
                    </>
-                    : <Button onClick={
+                    : <Button className="btn-dark btn-base" onClick={
                      (event) => {
                        handleToggle()
                      }
-                   }>EDIT INFO</Button>}
-                   <Button onClick={
+                   } >EDIT INFO</Button>}
+                   <Button className="btn-dark btn-base" onClick={
                      (event) => {
                        props.addToCompleted(props.index)
                      }
-                   }>MOVE TO COMPLETED COURSES</Button>
+                   } >MOVE TO COMPLETED COURSES</Button>
                </li>
     )
 }
