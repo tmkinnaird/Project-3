@@ -16,7 +16,7 @@ const Completed = (props) => {
                                         <Card.Title> COURSE: {golfs.name} </Card.Title>
                                         <Card.Text> LOCATION: {golfs.location} </Card.Text>
                                         <Card.Text> SCORE: {golfs.score} </Card.Text>
-                                        <Card.Text> DATE PLAYED:{golfs.date} </Card.Text>
+                                        <Card.Text> DATE PLAYED: {golfs.date} </Card.Text>
                                         <Card.Text><a href={golfs.url} target="_blank" > GOLF COURSE WEBSITE </a></Card.Text>
                                         <Button className="btn-dark btn-base" onClick={()=> props.removeFromCompleted(index)}>DELETE PLAYED COURSE</Button>
                                     </Card.Body>
