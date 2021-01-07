@@ -10,7 +10,7 @@ const cors = require('cors');
 // const methodOverride  = require('method-overide');
 const mongoose = require ('mongoose');
 const db = mongoose.connection;
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const MONGODB_URI = process.env.MONGODB_URI; // <= Heroku
 
