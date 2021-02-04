@@ -19,7 +19,7 @@ export default (props) => {
         const body = JSON.stringify({name, url, score, location, completed, date});
         event.currentTarget.reset();
         try {
-            const response = await fetch('https://tyler-golf-app.herokuapp.com//golfs', {
+            const response = await fetch('https://tyler-golf-app.herokuapp.com/golfs', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
