@@ -19,7 +19,7 @@ export default (props) => {
         // console.log(body);
        
         try {
-            const response = await fetch(`http://localhost:3000/golfs/${props.id}`, {
+            const response = await fetch(`https://tyler-golf-app.herokuapp.com/${props.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json'

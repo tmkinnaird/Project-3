@@ -16,7 +16,7 @@ function App() {
      // Read
      const fetchGolfs = async () => {
       try{
-        const response = await fetch('http://localhost:3000/golfs');
+        const response = await fetch('https://tyler-golf-app.herokuapp.com/golfs');
         const data = await response.json();
         setGolfs(data)
       }catch (error) {
@@ -44,7 +44,7 @@ function App() {
     // Delete
     const deleteGolf = async (id) => {
       try {
-        const response = await fetch(`http://localhost:3000/golfs/${id}`, {
+        const response = await fetch(`https://tyler-golf-app.herokuapp.com/${id}`, {
           method: 'DELETE',
           headers: {
             'Content-type' : 'application/json', 
